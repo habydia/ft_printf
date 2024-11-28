@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int     ft_print_char(char param)
+int     ft_print_char(int param)
 {
 		return(write(1, &param, 1));
 }

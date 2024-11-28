@@ -3,18 +3,18 @@
 
 int	ft_pars_format(va_list args, const char format)
 {
-	int	print_len;
+	int	print_len; //c
 
-	print_len = 0;
+	print_len = 0; //c
 	
 	if(format == 'c')
-		print_len += ft_putchar_fd(va_arg(args, int), 1);
+		print_len += ft_putchar_fd(va_arg(args, int), 1); //c
 	else if (format == 's')
-		print_len += ft_putstr_fd(va_arg(args, const char *), 1);
+		print_len += ft_putstr_fd(va_arg(args, const char *), 1); //c
 	else if (format == 'p')
-		print_len += ft_print_ptr(va_arg(args, uintptr));
+		print_len += ft_print_ptr(va_arg(args, uintptr_t)); //c
 	else if (format == 'd' || format == 'i')
-		print_len += ft_print_base(va_arg(args, int), format);
+		print_len += ft_print_base(va_arg(args, int), format); //c
 	else if (format == 'u')
 		print_len += ft_print_unint(va_arg(args, unsigned int));
 	else if (format == 'x' || format == 'X')
@@ -41,7 +41,7 @@ int	ft_printf(const char *str, ...)
 	{
 		if(str[i] == '%')
 		{
-			print_len += ft_pars_format(args, str[i+1])
+			print_len += ft_pars_format(args, str[i+1]);
 
 			i++;
 		}
@@ -53,11 +53,11 @@ int	ft_printf(const char *str, ...)
 	return(print_len);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 
 int main(void)
 {
     int len = ft_printf("Hello %s! Number: %d, Hex: %x\n", "world", 42, 255);
     printf("Length: %d\n", len); // Affiche la longueur totale imprimée
     return 0;
-}
+}*/
